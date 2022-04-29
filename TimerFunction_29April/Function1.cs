@@ -37,7 +37,6 @@ namespace TimerFunction_29April
                 Console.WriteLine("Queue Message : "+queueMessage.AsString);
                 //await cloudQueue.DeleteMessageAsync(message.Id, message.PopReceipt);
             }
-
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }
