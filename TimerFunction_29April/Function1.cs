@@ -29,9 +29,12 @@ namespace TimerFunction_29April
                 TableQuery<LogEntity> tableQuery = new TableQuery<LogEntity>();
                 foreach(LogEntity entity in await table.ExecuteQuerySegmentedAsync(tableQuery, null))
                 {
-                    Console.WriteLine($"{entity.PartitionKey} \t{entity.RowKey}\t {entity.Number}");
+                    Console.WriteLine("Roll No : "+entity.PartitionKey);
+                    Console.WriteLine("Name : "+entity.RowKey);
+                    Console.WriteLine("Mobile Number : "+entity.Number);
+                    Console.WriteLine();
                 }
-                Console.WriteLine(queueMessage.AsString);
+                Console.WriteLine("Queue Message : "+queueMessage.AsString);
                 //await cloudQueue.DeleteMessageAsync(message.Id, message.PopReceipt);
             }
 
